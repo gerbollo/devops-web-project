@@ -25,7 +25,7 @@ pipeline {
         }
         stage('build image') {
           steps {
-            sh 'docker build -t <nombre de usuario>/campaign-demo:v1 --label campaign-demo-server .'
+            sh 'docker build -t genciher/campaign-demo:v1 --label campaign-demo-server .'
           }
         }
         stage('Docker Hub Login') {
@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Push to Docker Hub') {
           steps {
-            sh 'docker push <nombre de usuario>/campaign-demo:v1'
+            sh 'docker push genciher/campaign-demo:v1'
           }
         }
     }
